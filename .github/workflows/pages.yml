@@ -1,0 +1,41 @@
+name: Publish demo pages and videos
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout published files
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Prepare static files and restore approved videos
+        run: |
+          rsync -a --exclude='.git/' --exclude='.github/' --exclude='tools/' --exclude='video-parts/' --exclude='_site/' ./ _site/
+          python3 tools/assemble_videos.py _site
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+          include-hidden-files: true
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

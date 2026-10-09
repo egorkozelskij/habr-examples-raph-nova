@@ -1,0 +1,28 @@
+{
+  "videos": [
+    {
+      "name": "01_graphs.mp4",
+      "bytes": 117430800,
+      "sha256": "662c46b162b0b6b084b5a4c4e2780d24c7a4511871e02df461c6465f87401786",
+      "parts": [
+        "01_graphs.mp4.part01",
+        "01_graphs.mp4.part02"
+      ]
+    },
+    {
+      "name": "02_timelines.mp4",
+      "bytes": 59778702,
+      "sha256": "92e677fb5ab9e06dc4921505f461faf21a85958530c111998dece76f5b68276f"
+    },
+    {
+      "name": "03_map.mp4",
+      "bytes": 54354186,
+      "sha256": "b0a20c9ba3a1372552d02f36423247a5f928e1ba7a41b1fac495e91f8cccc6f0"
+    },
+    {
+      "name": "04_bunnymark.mp4",
+      "bytes": 103092669,
+      "sha256": "699f6734e168cfa5fa8b590f0736e51ce03ccea9549e4f9b52c7a66125f04881"
+    }
+  ]
+}
