@@ -1,0 +1,1 @@
+async function r(e,s){const o=await fetch(e,{signal:s});if(!o.ok||!o.body)throw new Error(`Не удалось загрузить данные: HTTP ${o.status}`);const n=o.body.pipeThrough(new DecompressionStream("gzip"));return await new Response(n).json()}export{r as l};

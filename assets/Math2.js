@@ -1,0 +1,1 @@
+var Math2={};Math2.random=function(r,n){return Math.random()*(n-r)+r},Math2.map=function(r,n,o,t,a){return(a-t)*((r-n)/(o-n))+t},Math2.randomPlusMinus=function(r){return r=r||.5,Math.random()>r?-1:1},Math2.randomInt=function(r,n){return n+=1,Math.floor(Math.random()*(n-r)+r)},Math2.randomBool=function(r){return r=r||.5,Math.random()<r};
